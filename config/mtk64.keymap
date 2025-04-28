@@ -12,7 +12,7 @@
 
 / {
     macros {
-        pw_0_0: pw_0_1 {
+        pw_0_0: pw_0_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp O &kp U &kp P &kp U &kp N &kp MINUS &kp LS(L) &kp LS(X)>;
