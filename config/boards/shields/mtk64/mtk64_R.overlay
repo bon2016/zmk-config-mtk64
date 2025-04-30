@@ -69,22 +69,19 @@
 };
 
 / {
-    chosen {
-        zmk,hids = &hids_ll;   /* デフォルトと置き換え */
+    /* Apple Low-Latency 判定用 */
+    bt {
+        /* 0x03C0 = Generic HID (= keyboard+mouse) */
+        device-appearance = <BT_APPEARANCE_HID_GENERIC>;
     };
 
-    hids_ll: hids_ll {
+    /* HID Information characteristic */
+    hids: hids_ll {
         compatible = "zmk,ble-hids";
-        hid-country-code = <0>;    /* NotLocalised */
-        hid-version      = <0x0111>; /* HID v1.11 */
-        hid-flags = <        /* Low-Latency 判定フラグ */
-            BT_HIDS_REMOTE_WAKE
-            | BT_HIDS_NORMALLY_CONNECT
-        >;
+        hid-country-code = <0>;
+        hid-version      = <0x0111>;
+        /* スペース区切りか括弧で OR */
+        hid-flags = <BT_HIDS_REMOTE_WAKE BT_HIDS_NORMALLY_CONNECT>;
+        /* 例: hid-flags = <(BT_HIDS_REMOTE_WAKE | BT_HIDS_NORMALLY_CONNECT)>; */
     };
-};
-
-&bt_hci {
-    device-appearance = <BT_APPEARANCE_HID_KEYBOARD>;
-    status = "okay";
 };
