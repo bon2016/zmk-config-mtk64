@@ -67,21 +67,3 @@
         snipe-layers = <1>;
     };
 };
-
-/ {
-    /* Apple Low-Latency 判定用 */
-    bt {
-        /* 0x03C0 = Generic HID (= keyboard+mouse) */
-        device-appearance = <BT_APPEARANCE_HID_GENERIC>;
-    };
-
-    /* HID Information characteristic */
-    hids: hids_ll {
-        compatible = "zmk,ble-hids";
-        hid-country-code = <0>;
-        hid-version      = <0x0111>;
-        /* スペース区切りか括弧で OR */
-        hid-flags = <BT_HIDS_REMOTE_WAKE BT_HIDS_NORMALLY_CONNECT>;
-        /* 例: hid-flags = <(BT_HIDS_REMOTE_WAKE | BT_HIDS_NORMALLY_CONNECT)>; */
-    };
-};
