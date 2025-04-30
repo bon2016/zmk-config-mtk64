@@ -34,12 +34,41 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+        };
+
+        combo_- {
+            bindings = <&kp MINUS>;
+            key-positions = <9 10>;
+        };
+
+        combo_equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <21 22>;
+        };
+
+        combo_nub {
+            bindings = <&kp NON_US_BACKSLASH>;
+            key-positions = <33 34>;
+        };
+
+        combo_sqt {
+            bindings = <&kp SQT>;
+            key-positions = <47 48>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS  &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp EQUAL  &kp CAPS  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMICOLON  &kp NON_US_BACKSLASH  &kp LEFT_GUI  &mt LEFT_SHIFT Z  &mt LEFT_CONTROL X  &mt LEFT_ALT C  &mt LEFT_GUI V  &kp B  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N  &mt RIGHT_GUI M  &mt RIGHT_ALT COMMA  &mt RIGHT_CONTROL PERIOD  &mt RIGHT_SHIFT SLASH  &kp SQT  &kp BACKSPACE  &kp ENTER  &lt 1 LANG2  &lt 2 SPACE  &lt 2 BACKSPACE  &lt 1 ENTER  &kp ENTER  &kp DEL  &tog 5  &kp ENTER  &lt 3 LANG1  &lt 3 ENTER  &kp ENTER  &tog 2  &kp LANG1  &kp LANG2  &mo 1  &mo 2  &mo 3  &mo 1  &mo 2  &mo 3  &mo 1  &mo 2  &mo 3
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp DEL  &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BACKSPACE  &kp CAPS  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMICOLON  &kp ENTER  &kp LSHIFT  &mt LEFT_SHIFT Z  &mt LEFT_CONTROL X  &mt LEFT_ALT C  &mt LEFT_GUI V  &kp B  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp N  &mt RIGHT_GUI M  &mt RIGHT_ALT COMMA  &mt RIGHT_CONTROL PERIOD  &mt RIGHT_SHIFT SLASH  &kp RSHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &lt 1 LANG2  &lt 2 SPACE  &lt 2 BACKSPACE  &lt 1 ENTER  &kp RIGHT_ALT  &kp RIGHT_CONTROL  &tog 5  &kp ENTER  &lt 3 LANG1  &lt 3 ENTER  &kp ENTER  &tog 2  &kp LANG1  &kp LANG2  &mo 1  &mo 2  &mo 3  &mo 1  &mo 2  &mo 3  &mo 1  &mo 2  &mo 3
             >;
 
             sensor-bindings = <
