@@ -67,4 +67,21 @@
     };
 };
 
+/* Add/append the following block */
 
+ / {
+    /* ----- Bluetooth identity ----------------------------------- */
+    bt {
+        /* Advertise as Keyboard + Mouse combo (0x03C3) */
+        bt,device-appearance = <BT_APPEARANCE_HID_COMBO>; /* == 0x03C3 */
+
+        /* PnP ID characteristic (USB‐style VID/PID)                *
+         *  macOS はここを見て Low-Latency HID か判定               */
+        bt,vid = <0x1D50>;   /* OpenMoko community VID */
+        bt,pid = <0x615E>;   /* 好きな値で OK、0x0001 以上 */
+        bt,ver = <0x0001>;   /* FW バージョン */
+
+        /* 任意: 広告に載るデバイス名を固定したい場合 */
+        bt,device-name = "MTK64";
+    };
+};
