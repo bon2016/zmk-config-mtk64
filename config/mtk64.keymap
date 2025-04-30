@@ -53,7 +53,7 @@
         };
 
         combo_nub {
-            bindings = <&kp NON_US_BACKSLASH>;
+            bindings = <&kp BACKSLASH>;
             key-positions = <33 34>;
         };
 
