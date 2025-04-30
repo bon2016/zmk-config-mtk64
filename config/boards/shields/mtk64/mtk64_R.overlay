@@ -25,17 +25,6 @@
 
     };
 
-    /* additional */
-    chosen {
-        zmk,input-mode = "mouse";     /* Combo: keyboard+mouse */
-    };
-
-    /* Apple が LowLatency 判定に使うフィールド */
-    bt {
-        bt,device-appearance = <BT_APPEARANCE_HID_COMBO>; /* 0x03C3 */
-        bt,vid = <0x1D50>;  /* ZMK Project – Apple が既知と判定 */
-        bt,pid = <0x615E>;  /* 任意 – ログに出る */
-    };
 };
 
 &pinctrl {
