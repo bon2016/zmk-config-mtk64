@@ -1,5 +1,4 @@
 #include "mtk64.dtsi"
-#include <zephyr/dt-bindings/bluetooth/appearance.h>
 
 &default_transform {
     row-offset = <7>;
@@ -24,6 +23,18 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
+    };
+
+    /* additional */
+    chosen {
+        zmk,input-mode = "mouse";     /* Combo: keyboard+mouse */
+    };
+
+    /* Apple が LowLatency 判定に使うフィールド */
+    bt {
+        bt,device-appearance = <BT_APPEARANCE_HID_COMBO>; /* 0x03C3 */
+        bt,vid = <0x1D50>;  /* ZMK Project – Apple が既知と判定 */
+        bt,pid = <0x615E>;  /* 任意 – ログに出る */
     };
 };
 
@@ -65,23 +76,5 @@
         automouse-layer = <6>;
         scroll-layers = <3>;
         snipe-layers = <1>;
-    };
-};
-
-/* Add/append the following block */
-
-/ {
-    bt {
-        /* GAP Appearance: HID Combo (0x03C3) */
-        device-appearance = <BT_APPEARANCE_HID_COMBO>;
-
-        pnp-id {
-            vendor-id-source = <2>;         /* 2 = USB-IF */
-            vendor-id        = <0x1D50>;    /* OpenMoko */
-            product-id       = <0x615E>;
-            product-version  = <0x0001>;
-        };
-
-        device-name = "MTK64";
     };
 };
