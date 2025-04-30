@@ -156,4 +156,13 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
     };
+
+    bluetooth: bluetooth {
+        compatible = "zephyr,bluetooth";
+        /* 0x03C1 = HID Combo (keyboard + mouse) */
+        bt,device-appearance = <BT_APPEARANCE_HID_COMBO>;
+
+        /* ついでにデバイス名を固定したい場合 */
+        bt,device-name = "MTK64EBT";
+    };
 };
